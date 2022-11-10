@@ -1,5 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
+
  <div class="table-agile-info">
  <div class="panel panel-default">
  <div class="panel-heading">
@@ -20,7 +21,6 @@
  <div class="col-sm-3">
  <div class="input-group">
  <input type="text" class="input-sm form-control" placeholder="Search">
-
  <span class="input-group-btn">
  <button class="btn btn-sm btn-default" type="button">Go!</button>
  </span>
@@ -54,8 +54,7 @@
  <tbody>
  @foreach($all_category_product as $key => $cate_pro)
  <tr>
- <td><label class="i-checks m-b-none"><input type="checkbox" 
-name="post[]"><i></i></label></td>
+ <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
  <td>{{ $cate_pro->category_name }}</td>
  <td>{{ $cate_pro->slug_category_product }}</td>
  <td><span class="text-ellipsis">
@@ -74,12 +73,9 @@ name="post[]"><i></i></label></td>
  </span></td>
  
  <td>
- <a href="{{URL::to('/edit-category-product/'.$cate_pro->category_id)}}" 
-class="active styling-edit" ui-toggle-class="">
+ <a href="{{URL::to('/edit-category-product/'.$cate_pro->category_id)}}" class="active styling-edit" ui-toggle-class="">
  <i class="fa fa-pencil-square-o text-success text-active"></i></a>
- <a onclick="return confirm('Bạn có chắc là muốn xóa danh mục này ko?')" 
-href="{{URL::to('/delete-category-product/'.$cate_pro->category_id)}}" class="active 
-styling-edit" ui-toggle-class="">
+ <a onclick="return confirm('Bạn có chắc là muốn xóa danh mục này ko?')" href="{{URL::to('/delete-category-product/'.$cate_pro->category_id)}}" class="active styling-edit" ui-toggle-class="">
  <i class="fa fa-times text-danger text"></i>
  </a>
  </td>
@@ -93,8 +89,7 @@ styling-edit" ui-toggle-class="">
  <div class="row">
  
  <div class="col-sm-5 text-center">
- <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 
-items</small>
+ <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
  </div>
  <div class="col-sm-7 text-right text-center-xs"> 
  <ul class="pagination pagination-sm m-t-none m-b-none">
