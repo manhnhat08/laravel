@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryProduct;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BrandProduct;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,3 +65,20 @@ Route::get('/danh-muc-san-pham/{slug_category_product}',[CategoryProduct::class,
 Route::get('/thuong-hieu-san-pham/{brand_slug}',[BrandProduct::class,'show_brand_home']); 
 Route::get('/chi-tiet-san-pham/{product_slug}','ProductController@details_product');
 
+Route::post('/save-cart',[CartController::class,'save_cart']);
+Route::get('/show-cart',[CartController::class,'show_cart']);
+
+Route::get('/delete-to-cart/{rowId}',[CartController::class,'delete_to_cart']);
+Route::post('/update-cart-quantity',[CartController::class,'update_cart_quantity']);
+
+Route::get('/login-checkout',[CheckoutController::class,'login_checkout']);
+Route::post('/add-customer',[CheckoutController::class,'add_customer']);
+Route::get('/checkout',[CheckoutController::class,'checkout']);
+Route::post('/login-customer',[CheckoutController::class,'login_customer']);
+Route::get('/logout-checkout',[CheckoutController::class,'logout_checkout']);
+Route::post('/save-checkout-customer',[CheckoutController::class,'save_checkout_customer']);
+Route::get('/payment',[CheckoutController::class,'payment']);
+Route::post('/order-place',[CheckoutController::class,'order_place']);
+
+Route::get('/manage-order',[CheckoutController::class,'manage_order']);
+Route::get('/view-order/{orderId}',[CheckoutController::class,'view_order']);
